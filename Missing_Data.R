@@ -6,21 +6,18 @@
 managers_data <- read.csv("managers.csv")
 managers_data
 
-# removes any rows that contains NA - listwise deletion --
-# store the data frame to "new_data"
+# Use na.omit() to store any full rows into new_data data frame
 new_data <- na.omit(managers_data)
 new_data
 
-# Use complete.cases to show rows where data is available
-# use dataframe complete_data
+# Use complete.cases() to show all complete rows –store in complete_data and missing_data accordingly.
 complete_data <- complete.cases(managers_data)
 complete_data
 
 # Show sum of completed rows
 sum(complete_data)
 
-# list the rows that do not have missing values
-# Note that the ',' and no number inside square brackets means "all columns"
+# Use nrow() to show a total complete rows
 complete_data <- managers_data[complete.cases(managers_data),]
 complete_data
 nrow(complete_data)
